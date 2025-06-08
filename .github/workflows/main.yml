@@ -40,7 +40,7 @@ jobs:
           - mipsel_74kc
           - mipsel_mips32
           - x86_64
-          sdk:
+        sdk:
          -openwrt-24.10
          -SNAPSHOT 
 
@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.arch }}-${{ matrix.sdk }}
-          path: bin/packages/${{ matrix.arch }}/packages_ci/*.[ai]ipk
+          path: bin/packages/${{ matrix.arch }}/packages_ci/*.[ai]pk
 
       - name: Upload packages
         uses: ncipollo/release-action@v1
@@ -71,4 +71,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
           replacesArtifacts: true
-          artifacts: "bin/packages/${{ matrix.arch }}/packages_ci/*.[ai]ipk"
+          artifacts: "bin/packages/${{ matrix.arch }}/packages_ci/*.[ai]pk"
