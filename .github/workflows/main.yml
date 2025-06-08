@@ -41,8 +41,8 @@ jobs:
           - mipsel_mips32
           - x86_64
         sdk:
-         -openwrt-24.10
-         -SNAPSHOT 
+          - openwrt-24.10
+          - SNAPSHOT 
 
     steps:
       - uses: actions/checkout@v4
@@ -56,6 +56,7 @@ jobs:
           FEEDNAME: packages_ci
           PACKAGES: luci-app-temp-status
           NO_REFRESH_CHECK: true
+          V: s
           
 
       - name: Upload artifacts
